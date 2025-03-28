@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #5d2555;
+    --secondary-color: #7e57c2;
+    --accent-color: #ff4081;
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+    --card-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+html,
+body {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    height: 100%;
+}
+
+body {
+    background: var(--light-bg);
+    color: var(--text-color);
+}
+
+#app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background: var(--primary-color);
+    color: white;
+    padding: 35px 20px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.birthday-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: var(--card-shadow);
+    margin: -40px 0 20px;
+    position: relative;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid #eaeaea;
+    border-radius: 12px;
+    font-size: 18px;
+    transition: var(--transition);
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+input[type="text"]:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(126, 87, 194, 0.15);
+}
+
+input[type="text"]::placeholder {
+    color: #bbb;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 12px;
+    font-weight: 600;
+    padding: 16px 24px;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    border: none;
+    width: 100%;
+    font-size: 17px;
+    margin-top: 10px;
+}
+
+.button svg {
+    margin-left: 8px;
+    transition: transform 0.2s;
+}
+
+.button:hover svg {
+    transform: translateX(4px);
+}
+
+.button-primary {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #7c2c7c 100%);
+    color: white;
+}
+
+.button-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(93, 37, 85, 0.4);
+}
+
+.result {
+    text-align: center;
+    margin-top: 35px;
+}
+
+.result-days {
+    font-size: 4rem;
+    font-weight: 800;
+    margin: 15px 0;
+    color: white;
+    background-clip: text;
+}
+
+.result-text {
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 500;
+}
+
+.result-message {
+    margin-top: 20px;
+    font-style: italic;
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 15px;
+    background-color: rgba(255, 64, 129, 0.08);
+    border-radius: 10px;
+}
+
+footer {
+    background: var(--primary-color);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer-text {
+    opacity: 0.8;
+    font-size: 0.875rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header {
+        padding: 25px 20px 50px;
+    }
+
+    .button {
+        padding: 14px 20px;
+    }
+
+    .birthday-card {
+        padding: 20px;
+        margin-top: -30px;
+    }
+
+    .result-days {
+        font-size: 3.5rem;
+    }
+}
+
+/* Animation for the result display */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-in-out forwards;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Birthday balloons decoration */
+.balloon {
+    position: absolute;
+    width: 30px;
+    height: 35px;
+    border-radius: 50%;
+    opacity: 0.7;
+}
+
+.balloon:before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.5);
+    top: 100%;
+    left: 50%;
+}
+
+/* For modern glass-morphism effect */
+.glass-card {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
