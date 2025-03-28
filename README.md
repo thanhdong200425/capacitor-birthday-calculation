@@ -38,7 +38,7 @@ Follow these steps to install and run the Birthday Countdown app:
 ### Step 1: Clone the repository
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/thanhdong200425/capacitor-birthday-calculation.git
 cd my-app
 ```
 
